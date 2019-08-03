@@ -1,0 +1,26 @@
+SQL Startup de musique
+
+SELECT * FROM albums; #récupérer tous les albums
+
+SELECT * FROM albums WHERE Title = "Great"; #Récupérer tous les albums dont le titre contient "Great" 
+
+SELECT COUNT(*) FROM albums; #Donner le nombre total d'albums contenus dans la base (sans regarder les id bien sûr)
+
+DELETE FROM albums WHERE Title LIKE "%music%"; #Supprimer tous les albums dont le nom contient "music"
+
+SELECT * FROM albums JOIN artists ON artists.ArtistId = albums.ArtistId WHERE artists.Name = "AC/DC" ; #Récupérer tous les albums écrits par AC/DC
+
+SELECT Title FROM albums JOIN artists ON artists.ArtistId = albums.ArtistId WHERE artists.Name = "AC/DC" ; #Récupérer tous les titres des albums de AC/DC
+
+SELECT Name FROM tracks JOIN albums ON albums.AlbumId = tracks.AlbumId WHERE albums.Title = "Let There Be Rock"; #Récupérer la liste des titres de l'album "Let There Be Rock"
+
+SELECT UnitPrice,Milliseconds FROM tracks JOIN albums ON albums.AlbumId = tracks.AlbumId WHERE albums.Title = "Let There Be Rock"; #Afficher le prix de cet album ainsi que sa durée totale
+
+SELECT SUM(UnitPrice) FROM tracks JOIN albums ON albums.AlbumId = tracks.AlbumId WHERE albums.Title LIKE "%Deep Purple%";
+
+
+
+
+
+
+

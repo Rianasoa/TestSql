@@ -1,0 +1,16 @@
+SQL pour le Moocademy
+
+CREATE TABLE IF NOT EXISTS courses (
+	id_course INTEGER PRIMARY KEY AUTOINCREMENT,
+	tile_course TEXT NOT NULL,
+	description TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS lessons (
+	id_lesson INTEGER PRIMARY KEY AUTOINCREMENT,
+	title_lesson TEXT NOT NULL,
+	body TEXT NOt NULL,
+	course_id INTEGER,
+	FOREIGN KEY(course_id) REFERENCES courses(id_course)
+);
+

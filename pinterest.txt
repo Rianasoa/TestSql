@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS user (
+	id_user INTEGER PRIMARY KEY AUTOINCREMENT,
+	name_user TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pins (
+	id_pin INTEGER PRIMARY KEY AUTOINCREMENT,
+	url_image TEXT NOT NULL,
+	user_id INTEGER,
+	FOREIGN KEY(user_id) REFERENCES user(id_user)
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+	id_comment INTEGER PRIMARY KEY AUTOINCREMENT,
+	comment TEXT NOT NULL,
+	user_id INTEGER,
+	pin_id INTEGER,
+	FOREIGN KEY(user_id) REFERENCES user(id_user),
+	FOREIGN KEY(pin_id) REFERENCES user(id_pin)
+);

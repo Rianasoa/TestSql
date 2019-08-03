@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS student (
+	id_student INTEGER PRIMARY KEY AUTOINCREMENT,
+	name_student TEXT NOT NULL,
+	course_id INTEGER,
+	FOREIGN KEY(course_id) REFERENCES course(id_course)
+);
+
+CREATE TABLE IF NOT EXISTS course (
+	id_course INTEGER PRIMARY KEY AUTOINCREMENT,
+	name_course
+);
+
